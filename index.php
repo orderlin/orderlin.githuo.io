@@ -4,10 +4,10 @@ define("TOKEN", "linerShow");
 if (isset($_GET)) {
     // 验证服务器
     $postArray = 'get';
-    file_put_contents('test.txt', json_encode($postArray));
+    file_put_contents('test.txt', json_encode($postArray));exit;
     $nonce = $_GET['nonce'];
     $timestamp = $_GET['timestamp'];
-    $echostr = $_GET['echostr'];
+    //$echostr = $_GET['echostr'];
     $signature = $_GET['signature'];
     // 形成数组，然后按字典序排序
     $array = array();
