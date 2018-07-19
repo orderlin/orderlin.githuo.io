@@ -23,8 +23,9 @@ if (isset($_GET['echostr'])) {
         exit();
     }
 } else {
-    $postArray = 'post';
-    file_put_contents('/tmp/test.txt', json_encode($postArray));
+    $postArray = $GLOBALS['HTTP_RAW_POST_DATA'];
+    $postObj = simplexml_load_string( $postArray );
+    file_put_contents('/tmp/test.txt', json_encode($postObj));
 }
 
 
