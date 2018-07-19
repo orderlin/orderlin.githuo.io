@@ -24,8 +24,7 @@ if (isset($_GET['echostr'])) {
     }
 } else {
     $postArray = $GLOBALS['HTTP_RAW_POST_DATA'];
-    $postObj = simplexml_load_string( $postArray );
-    file_put_contents('/tmp/test.txt', json_encode($postObj));
+    file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
 
