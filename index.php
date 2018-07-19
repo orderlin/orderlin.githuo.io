@@ -1,13 +1,11 @@
 <?php
 define("TOKEN", "linerShow");
 
-if (isset($_GET)) {
+if (isset($_GET['echostr'])) {
     // 验证服务器
-    $postArray = $_GET;
-    file_put_contents('/tmp/test.txt', json_encode($postArray));exit;
     $nonce = $_GET['nonce'];
     $timestamp = $_GET['timestamp'];
-    //$echostr = $_GET['echostr'];
+    $echostr = $_GET['echostr'];
     $signature = $_GET['signature'];
     // 形成数组，然后按字典序排序
     $array = array();
@@ -25,7 +23,7 @@ if (isset($_GET)) {
         exit();
     }
 } else {
-    $postArray = 'post';
+    $postArray = $GLOBALS['HTTP_RAW_POST_DATA'];
     file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
