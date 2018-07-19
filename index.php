@@ -23,7 +23,7 @@ if (isset($_GET['echostr'])) {
         exit();
     }
 } else {
-    $postArray = 'post';
+    $postArray = $_REQUEST;
     file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
