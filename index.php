@@ -3,6 +3,8 @@ define("TOKEN", "linerShow");
 
 if (isset($_GET)) {
     // 验证服务器
+    $postArray = 'get';
+    file_put_contents('test.txt', json_encode($postArray));
     $nonce = $_GET['nonce'];
     $timestamp = $_GET['timestamp'];
     $echostr = $_GET['echostr'];
@@ -23,7 +25,7 @@ if (isset($_GET)) {
         exit();
     }
 } else {
-    $postArray = $GLOBALS['HTTP_RAW_POST_DATA'];
+    $postArray = 'post';
     file_put_contents('test.txt', json_encode($postArray));
 }
 
