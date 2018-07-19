@@ -23,7 +23,7 @@ if (isset($_GET['echostr'])) {
         exit();
     }
 } else {
-    $postArray = $GLOBALS['HTTP_RAW_POST_DATA'];
+    $postArray = 'post';
     file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
