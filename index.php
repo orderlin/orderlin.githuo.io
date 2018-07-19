@@ -26,17 +26,10 @@ if (isset($_GET['echostr'])) {
         echo $echostr;
         exit();
     }
-} 
-/*
- * 后续接入验证
- */
-elseif(isset($_GET['$signature']){
-    if ($str == $signature）{
-        return true;
-    }
-}else {
+} else {
     $postArray = $_REQUEST;
     file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
 
+?>
