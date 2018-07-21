@@ -22,12 +22,12 @@ $str = sha1(implode($array));
  */
 if (isset($_GET['echostr'])) {
     if ($str == $signature && $echostr) {
-        // 第一次接入weixin api接口的时候
+        // 第一次接入weixin api接口的3时候
         echo $echostr;
         exit();
     }
 } else {
-    $postArray = $_REQUEST;
+    $postArray = file_get_contents('php://input');
     file_put_contents('/tmp/test.txt', json_encode($postArray));
 }
 
