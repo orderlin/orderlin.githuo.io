@@ -45,8 +45,8 @@ if (isset($_GET['echostr'])) {
     
     $msgType = "text";
     $content = "Welcome to wechat world!";
-    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $content);
-    echo $resultStr;
+
+    echo sprintf($textTpl, $fromUsername, $toUsername,$time, $msgType, $content);
 }
 
 ?>
