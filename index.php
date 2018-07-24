@@ -1,7 +1,6 @@
 <?php
 define("TOKEN", "linerShow");
 
-
 // 验证服务器
 $nonce = isset($_GET['nonce']) ? $_GET['nonce'] : '';
 $timestamp = isset($_GET['timestamp']) ? $_GET['timestamp'] : '';
@@ -28,8 +27,26 @@ if (isset($_GET['echostr'])) {
     }
 } else {
     $postArray = file_get_contents('php://input');
-    file_put_contents('/tmp/test.txt', json_encode($postArray));
+    $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
+    
+    $fromUsername = $postObj->FromUserName;
+    $toUsername = $postObj->ToUserName;
+    $keyword = trim($postObj->Content);
+    $time = time();
+    
+    $textTpl = "<xml>
+      <ToUserName><![CDATA[%s]]></ToUserName>
+      <FromUserName><![CDATA[%s]]></FromUserName>
+      <CreateTime>%s</CreateTime>
+      <MsgType><![CDATA[%s]]></MsgType>
+      <Content><![CDATA[%s]]></Content>
+      <FuncFlag>0</FuncFlag>
+      </xml>"; 
+    
+    $msgType = "text";
+    $contentStr = "Welcome to wechat world!";
+    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+    echo $resultStr;
 }
-
 
 ?>
