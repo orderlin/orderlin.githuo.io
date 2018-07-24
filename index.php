@@ -33,7 +33,8 @@ if (isset($_GET['echostr'])) {
     $toUsername = $postObj->ToUserName;
     $keyword = trim($postObj->Content);
     $time = time();
-    
+    $json = json_encode($postObj);
+    file_put_contents('/tmp/text.log', $json);
     $textTpl = "<xml>
       <ToUserName><![CDATA[%s]]></ToUserName>
       <FromUserName><![CDATA[%s]]></FromUserName>
@@ -43,8 +44,8 @@ if (isset($_GET['echostr'])) {
       <FuncFlag>0</FuncFlag>
       </xml>"; 
     
-    $msgType = "text";
-    $content = '123';
+    $msgType = 'text';
+    $content = 'hello';
 
     echo sprintf($textTpl, $fromUsername, $toUsername,$time, $msgType, $content);
 }
