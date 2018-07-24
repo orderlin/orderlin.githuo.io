@@ -44,8 +44,8 @@ if (isset($_GET['echostr'])) {
       </xml>"; 
     
     $msgType = "text";
-    $contentStr = "Welcome to wechat world!";
-    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+    $content = "Welcome to wechat world!";
+    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $content);
     echo $resultStr;
 }
 
