@@ -11,7 +11,7 @@ class chat{
     private $_Format;
     private $_Recognition;
     private $_ThumbMediaId;
-    private $_chat;
+    static private $chat;
     /*
      * api_type 决定是否开启API对话
      */
@@ -33,6 +33,17 @@ class chat{
         if(isset($postObj->_Recognition)) $this->setRecognition($postObj->_Recognition);
         if(isset($postObj->_ThumbMediaId)) $this->setThumbMediaId($postObj->_ThumbMediaId);
     }
+    
+    static public function getChat($postObj){
+        //判断$instance是否是Uni的对象
+        //没有则创建
+        if (!self::$chat instanceof self) {
+            self::$chat = new self($postObj);
+        }
+        return self::$chat;
+    }
+            
+    
     
     
     private function setToUserName($toUserName){
@@ -88,7 +99,7 @@ class chat{
     }
     
     public function response(response $response){
-        $responseJson = $response->mian($this);
+        $responseJson = $response->mian(self::$chat);
     }
 }
 
