@@ -28,26 +28,10 @@ if (isset($_GET['echostr'])) {
 } else {
     $postArray = file_get_contents('php://input');
     $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
-    
-    $fromUsername = $postObj->FromUserName;
-    $toUsername = $postObj->ToUserName;
-    $keyword = trim($postObj->Content);
-    $time = time();
-    $json = json_encode($postObj);
-    file_put_contents('/tmp/text.log', $json);
-    $textTpl = "<xml>
-      <ToUserName><![CDATA[%s]]></ToUserName>
-      <FromUserName><![CDATA[%s]]></FromUserName>
-      <CreateTime>%s</CreateTime>
-      <MsgType><![CDATA[%s]]></MsgType>
-      <Content><![CDATA[%s]]></Content>
-      <FuncFlag>0</FuncFlag>
-      </xml>"; 
-    
-    $msgType = 'text';
-    $content = 'hello';
+    $chat = new chat($postObj);
 
-    echo sprintf($textTpl, $fromUsername, $toUsername,$time, $msgType, $content);
+    $chat->response(new response());
+
 }
 
 ?>
