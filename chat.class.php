@@ -11,6 +11,7 @@ class chat{
     private $_Format;
     private $_Recognition;
     private $_ThumbMediaId;
+    private $_chat;
     /*
      * api_type 决定是否开启API对话
      */
@@ -87,7 +88,7 @@ class chat{
     }
     
     public function response(response $response){
-        $responseJson = $response->mian(self);
+        $responseJson = $response->mian($this);
     }
 }
 
