@@ -99,6 +99,7 @@ class chat{
     }
     
     public function response(response $response){
+        file_put_contents('a.text', json_encode(self::$chat));
         $responseJson = $response->mian(self::$chat);
     }
 }
