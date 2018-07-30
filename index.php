@@ -1,4 +1,6 @@
 <?php
+REQUIRE_ONCE('chat.class.php');
+REQUIRE_ONCE('response.class.php');
 define("TOKEN", "linerShow");
 
 // 验证服务器
