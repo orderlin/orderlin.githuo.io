@@ -38,8 +38,10 @@ class chat{
         //判断$instance是否是Uni的对象
         //没有则创建
         if (!self::$chat instanceof self) {
-            file_put_contents('/tmp/test.log', 1);
+           
             self::$chat = new self($postObj);
+            $a = json_encode(self::$chat);
+            file_put_contents('/tmp/test.log', $a);
         }
         return self::$chat;
     }
