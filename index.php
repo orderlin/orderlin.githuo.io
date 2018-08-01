@@ -31,7 +31,7 @@ if (isset($_GET['echostr'])) {
     $postArray = file_get_contents('php://input');
     $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
     $chat = chat::getChat($postObj);
-
+    file_put_contents('/tmp/test.log', $chat->getFromUserName());
     $chat->response(new response());
 
 }
