@@ -67,8 +67,8 @@ class chat
         // 没有则创建
         if (! self::$chat instanceof self) {
             
-            self::$chat = new self($postObj);
-            $a = json_encode(new self($postObj));
+            self::$chat = new chat($postObj);
+            $a = json_encode(new chat($postObj));
             file_put_contents('/tmp/test.log', $a);
         }
         return self::$chat;
