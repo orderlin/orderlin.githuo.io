@@ -40,7 +40,7 @@ class chat{
         if (!self::$chat instanceof self) {
            
             self::$chat = new self($postObj);
-            $a = json_encode(self::$chat);
+            $a = json_encode($postObj);
             file_put_contents('/tmp/test.log', $a);
         }
         return self::$chat;
