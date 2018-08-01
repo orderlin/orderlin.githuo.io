@@ -32,7 +32,7 @@ if (isset($_GET['echostr'])) {
     $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
     $chat = chat::getChat($postObj);
     $a = json_encode($chat);
-    file_put_contents('/tmp/test.log', $a);
+    //file_put_contents('/tmp/test.log', $a);
     $chat->response(new response());
 
 }
