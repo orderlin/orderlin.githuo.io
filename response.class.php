@@ -14,7 +14,7 @@ class response{
    * 其它走图灵API,自动回复图片等信息
    */
     public function main($chat){
-        
+        file_put_contents('/tmp/test.log', json_encode($chat));
         switch ($chat->_MsgType){
             
             case 'text':
