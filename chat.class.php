@@ -25,8 +25,6 @@ class chat
 
     private $_ThumbMediaId;
 
-    private static $chat;
-
     /*
      * api_type 决定是否开启API对话
      */
@@ -61,18 +59,6 @@ class chat
             $this->setThumbMediaId($postObj->_ThumbMediaId);
     }
 
-    static public function getChat($postObj)
-    {
-        // 判断$instance是否是Uni的对象
-        // 没有则创建
-        if (! self::$chat instanceof self) {
-            
-            self::$chat = new chat($postObj);
-            $a = json_encode(new chat($postObj));
-            file_put_contents('/tmp/test.log', $a);
-        }
-        return self::$chat;
-    }
 
     private function setToUserName($toUserName)
     {

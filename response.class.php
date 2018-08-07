@@ -13,7 +13,7 @@ class response{
    * text走正则,判断是否是口令或者是菜单关键词
    * 其它走图灵API,自动回复图片等信息
    */
-    public function main($chat, $API_TYPE){
+    public function main($chat){
         
         switch ($chat->_MsgType){
             
