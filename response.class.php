@@ -31,7 +31,7 @@ class response{
     
     private function dealText($chat){
         
-        $content = '';
+        $content = '111';
         if(preg_match("#菜单#is", $chat->_Content)){
             $content = '菜单';
         }
