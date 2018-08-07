@@ -125,11 +125,11 @@ class chat
         return $this->_ToUserName;
     }
 
-    public function response(response $response)
+    /* public function response(response $response)
     {
         file_put_contents('/tmp/a.text', json_encode(self::$chat));
         $responseJson = $response->mian(self::$chat);
-    }
+    } */
 }
 
 
