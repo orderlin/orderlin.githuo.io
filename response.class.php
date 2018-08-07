@@ -35,7 +35,7 @@ class response{
         if(preg_match("#菜单#is", $chat->_Content)){
             $content = '菜单';
         }
-        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUsername, time(), 'text', '{$content}');
+        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUsername, time(), 'text', $content);
     } 
     
     
