@@ -36,27 +36,27 @@ class chat
     public function __construct($postObj)
     {
         if (isset($postObj->FromUserName))
-            $this->setToUserName($postObj->_FromUserName);
+            $this->setToUserName($postObj->FromUserName);
         if (isset($postObj->ToUserName))
-            $this->setFromUserName($postObj->_ToUserName);
+            $this->setFromUserName($postObj->ToUserName);
         if (isset($postObj->CreateTime))
-            $this->setCreateTime($postObj->_CreateTime);
+            $this->setCreateTime($postObj->CreateTime);
         if (isset($postObj->MsgType))
-            $this->setMsgType($postObj->_MsgType);
+            $this->setMsgType($postObj->MsgType);
         if (isset($postObj->Content))
-            $this->setContent($postObj->_Content);
+            $this->setContent($postObj->Content);
         if (isset($postObj->MsgId))
-            $this->setMsgId($postObj->_MsgId);
+            $this->setMsgId($postObj->MsgId);
         if (isset($postObj->PicUrl))
-            $this->setPicUrl($postObj->_PicUrl);
+            $this->setPicUrl($postObj->PicUrl);
         if (isset($postObj->MediaId))
-            $this->setMediaId($postObj->_MediaId);
+            $this->setMediaId($postObj->MediaId);
         if (isset($postObj->Format))
-            $this->setFormat($postObj->_Format);
+            $this->setFormat($postObj->Format);
         if (isset($postObj->Recognition))
-            $this->setRecognition($postObj->_Recognition);
+            $this->setRecognition($postObj->Recognition);
         if (isset($postObj->ThumbMediaId))
-            $this->setThumbMediaId($postObj->_ThumbMediaId);
+            $this->setThumbMediaId($postObj->ThumbMediaId);
     }
 
 
