@@ -30,6 +30,8 @@ if (isset($_GET['echostr'])) {
 } else {
     $postArray = file_get_contents('php://input');
     $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
+    $a = new chat($postObj);
+    file_put_contents(/tmp/post.log, $a);
     $response = new response();
     $response->main(new chat($postObj));
 
