@@ -29,9 +29,8 @@ if (isset($_GET['echostr'])) {
     }
 } else {
     $postArray = file_get_contents('php://input');
-    $postObj = json_decode(simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA));
-    $a = json_encode($postObj);
-    file_put_contents('/tmp/post.log', $a);
+    $postObj = simplexml_load_string($postArray, 'SimpleXMLElement', LIBXML_NOCDATA);
+    file_put_contents('/tmp/post.log',$postObj->FromUserName);
     $response = new response();
     $response->main(new chat($postObj));
 
