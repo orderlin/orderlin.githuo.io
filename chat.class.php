@@ -3,27 +3,27 @@
 class chat
 {
 
-    private $_ToUserName;
+    public $_ToUserName;
 
-    private $_FromUserName;
+    public $_FromUserName;
 
-    private $_CreateTime;
+    public $_CreateTime;
 
-    private $_MsgType;
+    public $_MsgType;
 
-    private $_Content;
+    public $_Content;
 
-    private $_MsgId;
+    public $_MsgId;
 
-    private $_PicUrl;
+    public $_PicUrl;
 
-    private $_MediaId;
+    public $_MediaId;
 
-    private $_Format;
+    public $_Format;
 
-    private $_Recognition;
+    public $_Recognition;
 
-    private $_ThumbMediaId;
+    public $_ThumbMediaId;
 
     /*
      * api_type 决定是否开启API对话
