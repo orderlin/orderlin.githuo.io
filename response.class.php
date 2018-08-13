@@ -99,7 +99,8 @@ class response{
     private function dealVideo($chat){
         $title = 'video test';
         $description = '部落永不为奴,除非包吃包住!';
-        echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId, $title, $description);
+        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', $description);
+        //echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId, $title, $description);
     } 
     
 }
