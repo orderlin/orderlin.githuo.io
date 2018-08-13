@@ -10,7 +10,7 @@ class response{
       </xml>";
       
       
-      private $img = "<xml>
+      private $image = "<xml>
       <ToUserName><![CDATA[%s]]></ToUserName>
       <FromUserName><![CDATA[%s]]></FromUserName>
       <CreateTime>%s</CreateTime>
@@ -34,7 +34,7 @@ class response{
                 $this->dealImg($chat);
                 break;
             default :
-                echo '无法识别';
+                echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', '对不起,无法识别您发送的消息');
                 
         }
         
@@ -55,7 +55,7 @@ class response{
     private function dealImg($chat){
         //$content = '222';
         //echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', $content);
-        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
+        echo sprintf($this->image, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
     } 
     
     
