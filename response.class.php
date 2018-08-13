@@ -20,7 +20,17 @@ class response{
       </Image>
       <FuncFlag>0</FuncFlag>
       </xml>";
-
+    
+      private $voice = "<xml><ToUserName><![CDATA[%s]]></ToUserName>
+       <FromUserName><![CDATA[%s]]></FromUserName>
+       <CreateTime>![CDATA[%s]]</CreateTime>
+       <MsgType><![CDATA[%s]]></MsgType>
+       <Voice>
+       <MediaId>
+       <![CDATA[media_id] ]>
+       </MediaId>
+       </Voice>
+       </xml>";
     
   /*
    * text走正则,判断是否是口令或者是菜单关键词
@@ -34,6 +44,9 @@ class response{
                 $this->dealText($chat);
                 break;
             case 'image':
+                $this->dealImg($chat);
+                break;
+            case 'voice':
                 $this->dealImg($chat);
                 break;
             default :
@@ -56,11 +69,14 @@ class response{
     } 
     
     private function dealImg($chat){
-        //$content = '222';
         //echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', $content);
         echo sprintf($this->image, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId);
     } 
     
+    
+    private function dealVoice($chat){
+        echo sprintf($this->voice, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId);
+    } 
     
     
     
