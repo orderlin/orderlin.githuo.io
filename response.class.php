@@ -27,7 +27,7 @@ class response{
        <MsgType><![CDATA[%s]]></MsgType>
        <Voice>
        <MediaId>
-       <![CDATA[media_id] ]>
+       <<![CDATA[%s]]>
        </MediaId>
        </Voice>
        </xml>";
