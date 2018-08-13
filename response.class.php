@@ -34,16 +34,17 @@ class response{
       <FuncFlag>0</FuncFlag>
       </xml>";
       
-      private $video = "<xml><ToUserName><![CDATA[%s]]></ToUserName>
+      private $video = "<xml>
+      <ToUserName><![CDATA[%s]]></ToUserName>
       <FromUserName><![CDATA[%s]]></FromUserName>
       <CreateTime>%s</CreateTime>
       <MsgType><![CDATA[%s]]></MsgType>
       <Video>
       <MediaId><![CDATA[%s]]></MediaId>
-      <Title><![CDATA[%s]]></Title>
-      <Description><![CDATA[%s]]></Description>
+
       </Video> 
       </xml>";
+      
   /*
    * text走正则,判断是否是口令或者是菜单关键词
    * 其它走图灵API,自动回复图片等信息
@@ -96,7 +97,7 @@ class response{
     private function dealVideo($chat){
         $title = 'video test';
         $description = '部落永不为奴,除非包吃包住!';
-        echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId, $title, $description);
+        echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId);
     } 
     
 }
