@@ -49,7 +49,7 @@ class response{
     } 
     
     private function dealImg($chat){
-        
+        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $content);
         echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
     } 
     
