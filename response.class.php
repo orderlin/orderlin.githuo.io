@@ -21,15 +21,17 @@ class response{
       <FuncFlag>0</FuncFlag>
       </xml>";
     
-      private $voice = "<xml><ToUserName><![CDATA[%s]]></ToUserName>
+      private $voice = "<xml>
+       <ToUserName><![CDATA[%s]]></ToUserName>
        <FromUserName><![CDATA[%s]]></FromUserName>
-       <CreateTime>![CDATA[%s]]</CreateTime>
+       <CreateTime>%s</CreateTime>
        <MsgType><![CDATA[%s]]></MsgType>
        <Voice>
        <MediaId>
-       <<![CDATA[%s]]>
+       <![CDATA[%s]]>
        </MediaId>
        </Voice>
+       <FuncFlag>0</FuncFlag>
        </xml>";
     
   /*
