@@ -11,13 +11,16 @@ class response{
       
       
       private $image = "<xml>
-      <ToUserName><![CDATA[%s]]></ToUserName>
-      <FromUserName><![CDATA[%s]]></FromUserName>
-      <CreateTime>%s</CreateTime>
-      <MsgType><![CDATA[%s]]></MsgType>
-      <PicUrl><![CDATA[%s]]></PicUrl>
+      <ToUserName><![CDATA[%s]]></ToUserName>
+      <FromUserName><![CDATA[%s]]></FromUserName>
+      <CreateTime>%s</CreateTime>
+      <MsgType><![CDATA[%s]]></MsgType>
+      <Image>
       <MediaId><![CDATA[%s]]></MediaId>
-      </xml>";
+      </Image>
+      <FuncFlag>0</FuncFlag>
+      </xml>";
+
     
   /*
    * text走正则,判断是否是口令或者是菜单关键词
@@ -55,7 +58,7 @@ class response{
     private function dealImg($chat){
         //$content = '222';
         //echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', $content);
-        echo sprintf($this->image, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
+        echo sprintf($this->image, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId);
     } 
     
     
