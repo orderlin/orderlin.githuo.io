@@ -47,7 +47,7 @@ class response{
                 $this->dealImg($chat);
                 break;
             case 'voice':
-                $this->dealImg($chat);
+                $this->dealVoice($chat);
                 break;
             default :
                 echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', '对不起,无法识别您发送的消息');
