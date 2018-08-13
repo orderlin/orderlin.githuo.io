@@ -45,12 +45,12 @@ class response{
         if(preg_match("#菜单#is", $chat->_Content)){
             $content = '菜单';
         }
-        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUsername, time(), $chat->_MsgType, $content);
+        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $content);
     } 
     
     private function dealImg($chat){
         
-        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUsername, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
+        echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_PicUrl, $chat->_MediaId);
     } 
     
     
