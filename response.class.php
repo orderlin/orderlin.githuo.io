@@ -30,7 +30,11 @@ class response{
             case 'text':
                 $this->dealText($chat);
                 break;
+            case 'image':
+                $this->dealImg($chat);
+                break;
             default :
+                echo '无法识别';
                 
         }
         
