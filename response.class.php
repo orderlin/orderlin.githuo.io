@@ -40,10 +40,11 @@ class response{
       <CreateTime>%s</CreateTime>
       <MsgType><![CDATA[%s]]></MsgType>
       <Video>
-      <MediaId>
-      <![CDATA[%s]]>
-      </MediaId>
-      </Video>
+      <MediaId><![CDATA[%s]]></MediaId>
+      <ThumbMediaId><![CDATA[%s]]></ThumbMediaId>
+      <Title><![CDATA[%s]]></Title>
+      <Description><![CDATA[%s]]></Description>
+      </Video> 
       <FuncFlag>0</FuncFlag>
       </xml>";
       
@@ -99,8 +100,8 @@ class response{
     private function dealVideo($chat){
         $title = 'video test';
         $description = '部落永不为奴,除非包吃包住!';
-        //echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', "{$chat->_MsgType},{$title}, {$description}");
-        echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId);
+        //echo sprintf($this->text, $chat->_ToUserName, $chat->_FromUserName, time(), 'text', $description);
+        echo sprintf($this->video, $chat->_ToUserName, $chat->_FromUserName, time(), $chat->_MsgType, $chat->_MediaId, $chat->_ThumbMediaId, $title, $description);
     } 
     
 }
