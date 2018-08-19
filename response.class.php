@@ -80,7 +80,7 @@ class response{
     
     private function dealText($chat){
         
-        $content = '111';
+        $content = $chat->_Content;
         if(preg_match("#菜单#is", $chat->_Content)){
             $content = '菜单';
         }
