@@ -1,7 +1,12 @@
 <?php
-REQUIRE_ONCE('chat.class.php');
-REQUIRE_ONCE('response.class.php');
+namespace liner;
+use liner\response;
+use liner\chat;
+use liner\dealCore;
+
+require 'vendor/autoload.php';
 define("TOKEN", "linerShow");
+
 
 // 验证服务器
 $nonce = isset($_GET['nonce']) ? $_GET['nonce'] : '';

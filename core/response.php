@@ -1,4 +1,5 @@
 <?php
+namespace liner;
 class response{
       private $text = "<xml>
       <ToUserName><![CDATA[%s]]></ToUserName>
