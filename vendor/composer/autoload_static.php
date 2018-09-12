@@ -9,12 +9,17 @@ class ComposerStaticInit7cb55e5934378e321a25988d69cd63ff
     public static $prefixLengthsPsr4 = array (
         'l' => 
         array (
-            'liner\\' => 6,
+            'linerModel\\' => 11,
+            'linerCore\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'liner\\' => 
+        'linerModel\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/model',
+        ),
+        'linerCore\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
         ),

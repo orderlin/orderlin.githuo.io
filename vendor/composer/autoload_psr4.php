@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'liner\\' => array($baseDir . '/core'),
+    'linerModel\\' => array($baseDir . '/model'),
+    'linerCore\\' => array($baseDir . '/core'),
 );

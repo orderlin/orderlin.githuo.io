@@ -30,13 +30,11 @@ class ComposerAutoloaderInit7cb55e5934378e321a25988d69cd63ff
             call_user_func(\Composer\Autoload\ComposerStaticInit7cb55e5934378e321a25988d69cd63ff::getInitializer($loader));
         } else {
             $map = require __DIR__ . '/autoload_namespaces.php';
-
             foreach ($map as $namespace => $path) {
                 $loader->set($namespace, $path);
             }
 
             $map = require __DIR__ . '/autoload_psr4.php';
-
             foreach ($map as $namespace => $path) {
                 $loader->setPsr4($namespace, $path);
             }
@@ -48,6 +46,7 @@ class ComposerAutoloaderInit7cb55e5934378e321a25988d69cd63ff
         }
 
         $loader->register(true);
+
         return $loader;
     }
 }
