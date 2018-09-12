@@ -6,6 +6,7 @@ class tool{
     
     public static function analysisShotUrl($sign){
         $content = self::curlAnalysisShotUrl(tpInterface::analysisShotUrlApi, $sign);
+        return $content;
         if(preg_match("##is", $content, $info)){
             $tb_item_id = $info[1];
             return $tb_item_id;
