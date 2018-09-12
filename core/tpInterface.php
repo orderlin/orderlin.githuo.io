@@ -6,6 +6,6 @@ class tpInterface
     /*
      * post ¶ÌÁ´½ÓID, return ½âÎöÄÚÈİ
      */
-    static const analysisShotUrlApi = 'http://www.xuandan.com/Home/GetTkl';
+     const analysisShotUrlApi = 'http://www.xuandan.com/Home/GetTkl';
     
 }
