@@ -1,5 +1,5 @@
 <?php
-namespace liner;
+namespace linerCore;
 class chat
 {
 

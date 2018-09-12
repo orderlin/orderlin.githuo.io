@@ -1,6 +1,6 @@
 <?php
-namespace liner;
-use liner\tool;
+namespace linerCore;
+use linerCore\tool;
 
 
 class response{

@@ -1,5 +1,5 @@
 <?php
-namespace liner;
+namespace linerModel;
 class dealCore {
     private $_tb_item_id;
     private $_start_time;
