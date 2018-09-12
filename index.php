@@ -1,8 +1,8 @@
 <?php
-namespace liner;
-use liner\response;
-use liner\chat;
-use liner\dealCore;
+namespace linerCore;
+use linerCore\response;
+use linerCore\chat;
+use linerCore\dealCore;
 
 require 'vendor/autoload.php';
 define("TOKEN", "linerShow");
