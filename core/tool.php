@@ -6,7 +6,7 @@ class tool{
     
     public static function analysisShotUrl($sign){
         $content = self::curlAnalysisShotUrl(tpInterface::analysisShotUrlApi, $sign);
-        return $content;
+        //return $content;
         if(preg_match("#.*?item.taobao.com.*?id=(\d+)#isu", $content, $info)){
             $tb_item_id = $info[1];
             return "2";
