@@ -85,8 +85,8 @@ class response{
     private function dealText($chat){
         
         $content = $chat->_Content;
-        if(preg_match("#[€￥](\w+)[€￥]#is", $chat->_Content, $match)){
-            $sign = $match[1];
+        if(preg_match("#[€￥(?:<<)](\w+)[€￥(?:>>)]#isu", $chat->_Content, $match)){
+            $sign = 'tkl=￥'.$match[1].'￥';
             $content = tool::analysisShotUrl($sign);
         }else if(preg_match("#菜单#is", $chat->_Content)){
             $content = '菜单';
