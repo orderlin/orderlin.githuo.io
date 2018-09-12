@@ -9,7 +9,7 @@ class tool{
         //return $content;
         if(preg_match("#.*?item.taobao.com.*?id=(\d+)#isu", $content, $info)){
             $tb_item_id = $info[1];
-            return '宝贝加入成功';
+            return '2322323';
         }else{
             return '1';
         }
