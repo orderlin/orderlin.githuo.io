@@ -1,8 +1,11 @@
 <?php
+namespace liner;
+use liner\tpInterface
+
 class tool{
     
-    public static function analysis($sign){
-        $content = self::curl_recieve_sign($sign);
+    public static function analysisShotUrl($sign){
+        $content = self::analysisShotUrl(tpInterface::analysisShotUrlApi, $sign);
         if(preg_match("##is", $content, $info)){
             $tb_item_id = $info[1];
             return $tb_item_id;
@@ -11,16 +14,27 @@ class tool{
     
     
     
-    public static function curl_recieve_sign($content){
+    public static function curlAnalysisShotUrl($url, $sign){
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $content);
-        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($curl,CURLOPT_HEADER,0);
-        $output = curl_exec($curl);
+        
+        curl_setopt($curl, CURLOPT_URL, $url);
+        
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        
+        curl_setopt($curl, CURLOPT_POST, 1);
+        
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $sign);
+        
+        curl_setopt($curl, CURLOPT_TIMEOUT, 5);
+        
+        $data = curl_exec($curl);
+        
         curl_close($curl);
-        return $output;
+        
+        return $data;
     }
-    
     
     
 }
