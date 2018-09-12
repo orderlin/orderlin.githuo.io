@@ -1,6 +1,6 @@
 <?php
 namespace liner;
-use liner\tpInterface
+use liner\tpInterface;
 
 class tool{
     
