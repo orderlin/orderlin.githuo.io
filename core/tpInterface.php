@@ -1,5 +1,5 @@
 <?php
-namespace linerModel;
+namespace linerCore;
 
 class tpInterface
 {
