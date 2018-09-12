@@ -9,9 +9,9 @@ class tool{
         //return $content;
         if(preg_match("#.*?item.taobao.com.*?id=(\d+)#isu", $content, $info)){
             $tb_item_id = $info[1];
-            return '2322323';
+            return 'add item sucessed, reply <show> will be display price diagram !';
         }else{
-            return '1';
+            return 'add item failed, plase check your short link !';
         }
     }
     
