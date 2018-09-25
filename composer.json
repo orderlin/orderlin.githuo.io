@@ -5,7 +5,8 @@
     "psr-4": {
 
       "linerCore\\" : "core",
-      "linerModel\\" : "model"
+      "linerModel\\" : "model",
+      "linerController\\" : "controller"
 
     }
 
