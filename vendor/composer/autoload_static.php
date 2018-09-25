@@ -11,6 +11,7 @@ class ComposerStaticInit7cb55e5934378e321a25988d69cd63ff
         array (
             'linerModel\\' => 11,
             'linerCore\\' => 10,
+            'linerController\\' => 16,
         ),
     );
 
@@ -22,6 +23,10 @@ class ComposerStaticInit7cb55e5934378e321a25988d69cd63ff
         'linerCore\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
+        ),
+        'linerController\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/controller',
         ),
     );
 
