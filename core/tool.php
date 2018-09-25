@@ -1,6 +1,8 @@
 <?php
 namespace linerCore;
 use linerCore\tpInterface;
+use linerController\folder;
+use linerController\checkItem;
 
 class tool{
     
@@ -9,7 +11,16 @@ class tool{
         //return $content;
         if(preg_match("#.*?item.taobao.com.*?id=(\d+)#isu", $content, $info)){
             $tb_item_id = $info[1];
-            return 'add item sucessed, reply <show> will be display price diagram !';
+            $b2c = 1;
+            $folderObject = new folder();
+            $informalFolder = $folderObject->getInformal();
+            $result = checkItem::insertCheckItem($informalFolder, $b2c, $tb_item_id);
+            if($result){
+                return 'item ready to check !';
+            }else{
+                return 'add item failed, plase check your short link !';
+            }
+            
         }else{
             return 'add item failed, plase check your short link !';
         }
@@ -25,6 +36,8 @@ class tool{
         curl_setopt($curl, CURLOPT_HEADER, 0);
         
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        
+        curl_setopt($curl, CURLOPT_REFERER, 'http://www.xuandan.com/tools.html');
         
         curl_setopt($curl, CURLOPT_POST, 1);
         
