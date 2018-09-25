@@ -9,6 +9,7 @@ class folder{
         //判断非正式文件夹是否存在，不存在新建
         $this->_user = $user_id;
         $this->_db = new muscle();
+        return $this->_db;
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
             $this->setInformalFolder();
@@ -33,6 +34,9 @@ class folder{
     private function setInformalFolder(){
         $sql = "insert into folder (user_id, name) value ({$this->_user}, 'informal')";
         $sth = $this->_db->query($sql);
+        if(!$sth){
+            return "文件创建失败\n";
+        }
     }
     
     
