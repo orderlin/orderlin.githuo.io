@@ -4,7 +4,8 @@
 
     "psr-4": {
 
-      "liner\/" : "core"
+      "linerCore\\" : "core",
+      "linerModel\\" : "model"
 
     }
 
