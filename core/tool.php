@@ -12,7 +12,7 @@ class tool{
         if(preg_match("#.*?item.taobao.com.*?id=(\d+)#isu", $content, $info)){
             $tb_item_id = $info[1];
             $b2c = 1;
-            $folderObject = new checkItem();
+            $folderObject = new folder();
             return json_encode($folderObject);
             $informalFolder = $folderObject->getInformal();
             $result = checkItem::insertCheckItem($informalFolder, $b2c, $tb_item_id);
