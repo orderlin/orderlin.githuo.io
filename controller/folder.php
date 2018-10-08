@@ -5,10 +5,11 @@ class folder{
     private $_infomal;
     private $_db;
     private $_user;
-    public function __constrct($user_id){
+    public function __construct($user_id){
         //判断非正式文件夹是否存在，不存在新建
         $this->_user = $user_id;
         $this->_db = new muscle();
+        echo 123;
         file_put_contents('/tmp/test.log', json_encode($this->_db));
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
@@ -46,4 +47,5 @@ class folder{
     
 }
 
-
+$a = new folder(123);
+//var_dump($a);
