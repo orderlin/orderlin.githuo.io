@@ -47,5 +47,3 @@ class folder{
     
 }
 
-$a = new folder(123);
-//var_dump($a);
