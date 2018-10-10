@@ -371,5 +371,6 @@ class muscle{
     }
 
 }
-
+$db = muscle::getInstance();
+var_dump($db);
 
