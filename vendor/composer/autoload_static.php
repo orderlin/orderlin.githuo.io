@@ -18,7 +18,7 @@ class ComposerStaticInit7cb55e5934378e321a25988d69cd63ff
     public static $prefixDirsPsr4 = array (
         'linerModel\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/moddle',
+            0 => __DIR__ . '/../..' . '/model',
         ),
         'linerCore\\' => 
         array (
