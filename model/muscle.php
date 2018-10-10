@@ -31,7 +31,7 @@ class muscle{
             
             $this->dsn = 'mysql:host='.$dbHost.';dbname='.$dbName;
             
-            $this->dbh = new \PDO($this->dsn, $dbUser, $dbPasswd);
+            $this->dbh = new PDO($this->dsn, $dbUser, $dbPasswd);
             
             $this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
             
@@ -72,7 +72,6 @@ class muscle{
     {
         
         if (self::$_instance === null) {
-            file_put_contents('/tmp/db.log', 1);
             self::$_instance = new self();
             
         }
