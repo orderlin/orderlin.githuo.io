@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'linerModel\\' => array($baseDir . '/model'),
+    'linerModel\\' => array($baseDir . '/moddle'),
     'linerCore\\' => array($baseDir . '/core'),
     'linerController\\' => array($baseDir . '/controller'),
 );
