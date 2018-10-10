@@ -31,7 +31,7 @@ class muscle{
             
             $this->dsn = 'mysql:host='.$dbHost.';dbname='.$dbName;
             
-            $this->dbh = new PDO($this->dsn, $dbUser, $dbPasswd);
+            $this->dbh = new \PDO($this->dsn, $dbUser, $dbPasswd);
             
             $this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
             
@@ -67,13 +67,13 @@ class muscle{
     
     */
     
-    public static function getInstance($dbHost, $dbUser, $dbPasswd, $dbName, $dbCharset)
+    public static function getInstance()
     
     {
         
         if (self::$_instance === null) {
             
-            self::$_instance = new self($dbHost, $dbUser, $dbPasswd, $dbName, $dbCharset);
+            self::$_instance = new self();
             
         }
         
@@ -365,9 +365,9 @@ class muscle{
     
     */
     
-        public function exec($sql=''){
+    public function exec($sql=''){
         
-            return $this->dbh->exec($sql);
+        return $this->dbh->exec($sql);
         
     }
 
