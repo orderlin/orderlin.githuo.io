@@ -9,7 +9,8 @@ class folder{
         //判断非正式文件夹是否存在，不存在新建
         $this->_user = $user_id;
         $this->_db = muscle::getInstance();
-        file_put_contents('/tmp/test.log', json_encode($this->_db));
+        $DBjson = json_encode($this->_db);
+        file_put_contents('/tmp/db.log', $DBjson);
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
             $this->setInformalFolder();
