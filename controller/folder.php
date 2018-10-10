@@ -10,7 +10,7 @@ class folder{
         $this->_user = $user_id;
         $this->_db = muscle::getInstance();
         $DBjson = json_encode($this->_db);
-        file_put_contents('/tmp/db.log', $DBjson);
+        //file_put_contents('/tmp/db.log', $DBjson);
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
             $this->setInformalFolder();
