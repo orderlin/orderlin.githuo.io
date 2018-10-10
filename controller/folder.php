@@ -22,7 +22,7 @@ class folder{
     
     private function getInformalFolder(){
         $sql = "select id from folder where user_id = {$this->_user} and name = 'informal'";
-        file_put_contents('/tmp/db.log', $sql);
+        //file_put_contents('/tmp/db.log', $sql);
         $sth = $this->_db->query($sql);
         $folder_id = $sth->fetchColumn();
         if($folder_id > 0){
