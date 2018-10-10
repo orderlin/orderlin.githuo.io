@@ -9,7 +9,7 @@ class muscle{
     
     protected $dsn;
     
-    public $dbh;
+    protected $dbh;
     
     
     
@@ -371,6 +371,6 @@ class muscle{
     }
 
 }
-$db = muscle::getInstance();
+$db = new muscle();
 var_dump($db);
 
