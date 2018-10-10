@@ -72,7 +72,7 @@ class muscle{
     {
         
         if (self::$_instance === null) {
-            
+            file_put_contents('/tmp/db.log', 1);
             self::$_instance = new self();
             
         }
