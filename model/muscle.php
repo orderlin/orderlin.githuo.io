@@ -35,7 +35,7 @@ class muscle{
             $this->dbh = new PDO($this->dsn, $dbUser, $dbPasswd);
             file_put_contents('/tmp/db2.log', json_encode($this->dsn));
             file_put_contents('/tmp/db3.log', json_encode($this->dbh));
-            var_dump($this->dbh);
+            var_dump(json_encode($this->dbh));
             $this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
             
         } catch (PDOException $e) {
