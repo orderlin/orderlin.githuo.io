@@ -3,6 +3,8 @@ namespace linerCore;
 use linerCore\tpInterface;
 use linerController\folder;
 use linerController\checkItem;
+use linerModel\muscle;
+
 class tool{
     
     public static function analysisShotUrl($sign){
@@ -55,3 +57,6 @@ class tool{
     
     
 }
+
+$DBjson = json_encode(muscle::getInstance());
+file_put_contents('/tmp/db.log', $DBjson);
