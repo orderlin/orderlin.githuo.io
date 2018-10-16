@@ -26,13 +26,14 @@ class muscle{
     private function __construct($dbHost = '127.0.0.1', $dbUser = 'muscle', $dbPasswd = 'muscle', $dbName = 'muscle', $dbCharset = 'utf8')
     
     {
-        file_put_contents('/tmp/db3.log', $dbHost);
+       
         try {
             
             $this->dsn = 'mysql:host='.$dbHost.';dbname='.$dbName;
             
             $this->dbh = new \PDO($this->dsn, $dbUser, $dbPasswd);
-            
+            file_put_contents('/tmp/db2.log', json_encode($this->dsn));
+            file_put_contents('/tmp/db3.log', json_encode($this->dbh));
             $this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
             
         } catch (PDOException $e) {
