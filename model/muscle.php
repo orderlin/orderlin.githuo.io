@@ -374,3 +374,7 @@ class muscle{
 
 }
 
+
+
+$a = muscle::getInstance();
+var_dump($a);exit;
