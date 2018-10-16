@@ -26,7 +26,7 @@ class muscle{
     private function __construct($dbHost = '127.0.0.1', $dbUser = 'muscle', $dbPasswd = 'muscle', $dbName = 'muscle', $dbCharset = 'utf8')
     
     {
-        file_put_contents('/tmp/db2.log', $dbHost..$dbUser..$dbPasswd..$dbName);
+        file_put_contents('/tmp/db3.log', $dbHost..$dbUser..$dbPasswd..$dbName);
         try {
             
             $this->dsn = 'mysql:host='.$dbHost.';dbname='.$dbName;
