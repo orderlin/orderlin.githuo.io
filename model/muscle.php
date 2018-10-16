@@ -372,3 +372,10 @@ class muscle{
     }
 
 }
+$a = muscle::getInstance()->dbh;
+$sql = "select * from folder";
+$sth = $a->query($sql);
+$res = $sth->fetchAll();
+var_dump($res);
+
+
