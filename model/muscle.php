@@ -73,7 +73,7 @@ class muscle{
         
         if (self::$_instance === null) {
             self::$_instance = new self();
-            file_put_contents('/tmp/db2.log', json_encode(json_encode(self)));
+            file_put_contents('/tmp/db2.log', json_encode(self::$_instance));
             
         }
         
