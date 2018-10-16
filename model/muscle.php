@@ -39,7 +39,7 @@ class muscle{
         } catch (\PDOException $e) {
             
             $this->outputError($e->getMessage());
-            file_put_contents('/tmp/db3.log', json_encode($this->outputError($e->getMessage())));
+            file_put_contents('/tmp/db4.log', json_encode($this->outputError($e->getMessage())));
         }
         
     }
