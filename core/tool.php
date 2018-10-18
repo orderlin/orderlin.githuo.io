@@ -12,8 +12,6 @@ class tool{
             $tb_item_id = $info[1];
             $b2c = 1;
             $folderObject = new folder(123);
-            var_dump($folderObject);
-            exit;
             return json_encode($folderObject);
             $informalFolder = $folderObject->getInformal();
             $result = checkItem::insertCheckItem($informalFolder, $b2c, $tb_item_id);
