@@ -22,10 +22,8 @@ class folder{
     
     private function getInformalFolder(){
         $sql = "select id from folder where user_id = {$this->_user} and name = 'informal'";
-        //file_put_contents('/tmp/db.log', $sql);
         $sth = $this->_db->query($sql);
         $folder_id = $sth->fetchColumn();
-        file_put_contents('/tmp/db7.log', json_encode($folder_id));
         if($folder_id > 0){
             $this->_infomal = $folder_id;
             return $this->_infomal;
