@@ -12,7 +12,7 @@ class tool{
             $tb_item_id = $info[1];
             $b2c = 1;
             $folderObject = new folder(123);
-            return json_encode($folderObject);
+            return json_encode($folderObject->getInformal());
             $informalFolder = $folderObject->getInformal();
             $result = checkItem::insertCheckItem($informalFolder, $b2c, $tb_item_id);
             if($result){
