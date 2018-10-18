@@ -76,7 +76,10 @@ class muscle{
             self::$_instance = new self();
             
         }
-        
+        $sql = "select * from folder";
+        $sth = self::$_instance->dbh->query($sql);
+        $res = $sth->fetchAll();
+        file_put_contents('/tmp/db5.log', json_encode($res));
         return self::$_instance;
         
     }
