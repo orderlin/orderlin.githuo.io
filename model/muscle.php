@@ -34,11 +34,11 @@ class muscle{
             
             $this->dbh = new PDO($this->dsn, $dbUser, $dbPasswd);
             
-            $this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
+            #$this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
             $sql = "select * from folder";
             $sth = $this->dbh->query($sql);
             $res = $sth->fetchAll();
-            file_put_contents('/tmp/db5.log', json_encode($res));
+            file_put_contents('/tmp/db6.log', json_encode($res));
             
         } catch (PDOException $e) {
             
