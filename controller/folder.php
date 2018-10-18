@@ -13,7 +13,7 @@ class folder{
         $sql = "select * from folder";
         $sth = $this->_db->query($sql);
         $res = $sth->fetchAll();
-        file_put_contents('/tmp/db6.log', json_encode($res));
+        file_put_contents('/tmp/db7.log', json_encode($res));
         
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
