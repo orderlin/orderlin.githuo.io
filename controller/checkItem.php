@@ -9,6 +9,7 @@ class checkItem{
         $count = $db->query($sql)->fetchColumn();
         if($count == 0){
             $sql = "insert ignore into check_item (b2c, b2c_id, folder_id) value ({$b2c}, '{$b2c_id}', {$folder_id})";
+            return  $sql;
             $rs = $db->query($sql);
             return $rs;
         }else{
