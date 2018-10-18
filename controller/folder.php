@@ -10,10 +10,6 @@ class folder{
         $this->_user = $user_id;
         $this->_db = muscle::getInstance()->dbh;
         
-        $sql = "select * from folder";
-        $sth = $this->_db->query($sql);
-        $res = $sth->fetchAll();
-        file_put_contents('/tmp/db7.log', json_encode($res));
         
         $informalFolderId = $this->getInformalFolder();
         if($informalFolderId === false){
@@ -29,6 +25,7 @@ class folder{
         //file_put_contents('/tmp/db.log', $sql);
         $sth = $this->_db->query($sql);
         $folder_id = $sth->fetchColumn();
+        file_put_contents('/tmp/db7.log', json_encode($folder_id));
         if($folder_id > 0){
             $this->_infomal = $folder_id;
             return $this->_infomal;
