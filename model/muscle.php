@@ -76,11 +76,8 @@ class muscle{
             self::$_instance = new self();
             
         }
-        $sql = "select * from folder";
-        $sth = self::$_instance->dbh->query($sql);
-        $res = $sth->fetchAll();
-        file_put_contents('/tmp/db6.log', json_encode($res));
-        return ;
+        
+        return self::$_instance;
         
     }
     
