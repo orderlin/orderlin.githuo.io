@@ -11,7 +11,7 @@ class checkItem{
             return true;
         }else{
             $sql = "insert ignore into check_item (b2c, b2c_id, folder_id) value ({$b2c}, '{$b2c_id}', {$folder_id})";
-            file_put_contents('/tmp/sql.log', $sql)
+            file_put_contents('/tmp/sql.log', $sql);
             $rs = $db->query($sql);
             return $rs;
         }
