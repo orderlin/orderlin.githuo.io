@@ -35,10 +35,6 @@ class muscle{
             $this->dbh = new PDO($this->dsn, $dbUser, $dbPasswd);
             
             #$this->dbh->exec('SET character_set_connection='.$dbCharset.', character_set_results='.$dbCharset.', character_set_client=binary');
-            $sql = "select * from folder";
-            $sth = $this->dbh->query($sql);
-            $res = $sth->fetchAll();
-            file_put_contents('/tmp/db6.log', json_encode($res));
             
         } catch (PDOException $e) {
             
@@ -80,8 +76,11 @@ class muscle{
             self::$_instance = new self();
             
         }
-        
-        return self::$_instance;
+        $sql = "select * from folder";
+        $sth = self::$_instance->dbh->query($sql);
+        $res = $sth->fetchAll();
+        file_put_contents('/tmp/db6.log', json_encode($res));
+        return ;
         
     }
     
